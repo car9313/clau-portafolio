@@ -12,7 +12,7 @@ const Skills = () => {
         {technologies.map((tech) => (
           <CardMarginBorders
             key={tech.id}
-            duration={Math.floor(Math.random() * 10000) + 10000}
+            duration={10000 + ((tech.id * 1234) % 10000)}
             borderRadius="1.15rem"
             style={{
               borderRadius: `calc(1.15rem* 0.96)`,

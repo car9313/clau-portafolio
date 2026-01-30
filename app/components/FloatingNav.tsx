@@ -1,5 +1,5 @@
 "use client";
-import React, { JSX, ReactNode, useState } from "react";
+import React, { JSX, ReactNode, useState, useEffect } from "react";
 import {
   motion,
   AnimatePresence,
@@ -29,6 +29,11 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const { scrollYProgress } = useScroll();
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
@@ -95,7 +100,7 @@ export const FloatingNav = ({
           className="rounded-full p-2 bg-primary/10 text-primary  hover:text-primaryColor hover:bg-primary/20 transition-colors border-none"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          {theme === "dark" ? <FaSun /> : <FaMoon />}
+          {mounted ? (theme === "dark" ? <FaSun /> : <FaMoon />) : null}
         </button>
 
       </motion.div>

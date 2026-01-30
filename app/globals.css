@@ -19,6 +19,8 @@
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
 
+    --input: oklch(0.9 0.01 250);
+
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
@@ -50,6 +52,8 @@
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
+ 
+    --input: oklch(0.25 0.015 250);
 
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
@@ -121,7 +125,30 @@
 .session-container {
   @apply min-h-screen h-full flex flex-col justify-center items-center
 }
+.mybutton{
+  @apply flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium
+}
 
 .icon-link {
   @apply w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md hover:bg-opacity-40 hover:-translate-y-1 transition-all cursor-pointer duration-300;
 }
+.button-secondary{
+   @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
+}
+  .button-outline{
+  @apply border bg-background  shadow-sm hover:bg-accent hover:text-accent-foreground /* dark:bg-input dark:border-input dark:hover:bg-input/50 */
+ } 
+
+   .button-primary{
+  @apply  bg-primaryColor text-white hover:bg-primaryColor/90
+  }
+      
+  .button-lg {
+   @apply  h-10 rounded-md px-6 has-[>svg]:px-4
+  }
+   .button-sm
+   {
+   @apply  h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5
+  }
+       
+      
