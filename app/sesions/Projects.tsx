@@ -191,9 +191,9 @@ const Projects = () => {
 
     // Inicializar con los primeros 3 projects
     useEffect(() => {
-        setDisplayedProjects(sampleProjects.slice(0, POSTS_PER_PAGE))
-        setHasMore(sampleProjects.length > POSTS_PER_PAGE)
-    }, [sampleProjects])
+          setDisplayedProjects(sampleProjects.slice(0, POSTS_PER_PAGE))
+          setHasMore(sampleProjects.length > POSTS_PER_PAGE)
+        }, [])
 
  // Configurar Intersection Observer para infinite scroll
     useEffect(() => {
@@ -222,7 +222,7 @@ const Projects = () => {
         observer.observe(observerTarget.current)
 
         return () => observer.disconnect()
-    }, [hasMore, sampleProjects])
+    }, [hasMore])
 
 
 

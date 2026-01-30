@@ -1,7 +1,5 @@
 
 import Image from "next/image";
-import { title } from "process";
-import { BiExpand } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 
 import { FaYoutube } from "react-icons/fa";
@@ -47,7 +45,7 @@ const CardProyect = ({ name, description, image, load }: Props) => {
         <p className="my-3 cursor-text text-sm text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
           {description}
         </p>
-        <button aria-label={`Ver más detalles de ${title}`} className="font-com rounded-lg bg-bgPrimary px-3.5 py-2 text-sm capitalize text-white shadow shadow-black/60">
+          <button aria-label={`Ver más detalles de ${name}`} className="font-com rounded-lg bg-bgPrimary px-3.5 py-2 text-sm capitalize text-white shadow shadow-black/60">
               Ver más
         </button>
       </div>

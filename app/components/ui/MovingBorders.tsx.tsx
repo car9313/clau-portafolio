@@ -22,12 +22,12 @@ export function CardMarginBorders({
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: React.ElementType;
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   return (
     <Component
@@ -81,27 +81,33 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
-  const pathRef = useRef<any>();
-  const progress = useMotionValue<number>(0);
+  type PathLike = SVGPathElement | (SVGRectElement & {
+    getTotalLength?: () => number
+    getPointAtLength?: (n: number) => { x: number; y: number }
+  })
+
+  const pathRef = useRef<PathLike | null>(null)
+  const progress = useMotionValue<number>(0)
 
   useAnimationFrame((time) => {
-    const length = pathRef.current?.getTotalLength();
+    const length = pathRef.current?.getTotalLength?.();
     if (length) {
-      const pxPerMillisecond = length / duration;
+      const pxPerMillisecond = length / (duration || 2000);
       progress.set((time * pxPerMillisecond) % length);
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
-  );
+  const x = useTransform(progress, (val) => {
+    const point = pathRef.current?.getPointAtLength?.(val)
+    return point ? point.x : 0
+  })
+
+  const y = useTransform(progress, (val) => {
+    const point = pathRef.current?.getPointAtLength?.(val)
+    return point ? point.y : 0
+  })
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 

@@ -17,7 +17,7 @@ const ProjectNavigation = ({
 
   useEffect(() => {
     onChange(active);
-  }, [active]);
+  }, [active, onChange]);
   return (
     <div className={styleContainer}>
       {tabs.map((name, index) => (

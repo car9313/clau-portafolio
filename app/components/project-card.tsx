@@ -7,8 +7,6 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { BiChevronLeft, BiChevronRight, BiExpand } from "react-icons/bi"
 import { ProjectContext, ProjectPrueba, ProjectStatus, TechCategory, TechWithCategory } from "../sesions/Projects"
-import { BsEye, BsGithub } from "react-icons/bs"
-import { FiExternalLink } from "react-icons/fi"
 import { CgClose } from "react-icons/cg"
 import { ActionsButtons } from "./actions-buttons"
 
@@ -67,13 +65,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
     document.body.style.overflow = "unset"
   }, [])
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
-  }
+  }, [project.images.length])
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
-  }
+  }, [project.images.length])
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index)
@@ -123,7 +121,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     }
 
     return () => window.removeEventListener("keydown", handleArrows)
-  }, [isModalOpen])
+  }, [isModalOpen, prevImage, nextImage])
 
   return (
     <>
