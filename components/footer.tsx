@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import MagicButton from "./ui/magic-button";
 import { Spotlight } from "./ui/spotlight";
 import { socialMedia } from "../data";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const Footer = () => {
   return (
@@ -44,11 +45,11 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          <div className="flex items-center md:gap-3 gap-6">
-            {socialMedia.map(({ id, Icon }) => (
-              <Icon key={id} className="w-5 h-5" />
-            ))}
-          </div>
+          <SocialMediaIcons
+            socialMedia={socialMedia}
+            iconSize={22}
+            variant="elegant"
+          />
         </div>
       </div>
     </footer>

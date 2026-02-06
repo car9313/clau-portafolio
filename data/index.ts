@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -7,9 +7,27 @@ export const navItems = [
 ];
 
 export const socialMedia = [
-  { id: 1, Icon: Github },
-  { id: 2, Icon: Twitter },
-  { id: 3, Icon: Linkedin },
+  {
+    id: 1,
+    Icon: Github, // Asegúrate de importar Github de lucide-react
+    url: "https://github.com/tu-usuario",
+    name: "GitHub",
+    color: "hover:text-primary",
+  },
+  {
+    id: 2,
+    Icon: Linkedin, // Asegúrate de importar Linkedin de lucide-react
+    url: "https://linkedin.com/in/tu-usuario",
+    name: "LinkedIn",
+    color: "hover:text-primary",
+  },
+  {
+    id: 3,
+    Icon: Mail, // Ya está importado
+    url: "mailto:tu@email.com",
+    name: "Email",
+    color: "hover:text-primary",
+  },
 ];
 
 export const technologies = [
