@@ -205,5 +205,5 @@
   }
 }
 .section-container {
-  @apply min-h-screen bg-background  mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8;
+  @apply min-h-screen relative w-full mx-auto max-w-6xl px-4 py-16;
 }

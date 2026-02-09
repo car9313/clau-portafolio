@@ -11,14 +11,16 @@ import { About } from "../sessions/about";
 
 export default function Home() {
   return (
-    <main className="relative bg-background flex justify-center items-center flex-col gap-8 overflow-hidden mx-auto sm:px-10 px-5 ">
-      <FloatingNav navItems={navItems} />
-      <Hero />
-      <Projects />
-      <Skills />
-      <Services />
-      <About />
+    <>
+      <main className="bg-background overflow-hidden w-full">
+        <FloatingNav navItems={navItems} />
+        <Hero />
+        <Projects />
+        <Skills />
+        <Services />
+        <About />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

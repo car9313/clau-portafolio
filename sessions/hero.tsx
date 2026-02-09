@@ -2,12 +2,12 @@ import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import MagicButton from "../components/ui/magic-button";
 import { Spotlight } from "../components/ui/spotlight";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import { ArrowBigDown, Download, Mail } from "lucide-react";
+import { ArrowBigDown, Download } from "lucide-react";
 import { socialMedia } from "../data";
 
 const Hero = () => {
   return (
-    <section className="session-container">
+    <section className="section-container">
       <>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -28,9 +28,6 @@ const Hero = () => {
             words="Transformando Visiones en Experiencias Digitales Excepcionales"
             className="text-center text-4xl md:text-6xl lg:text-7xl font-extrabold"
           />
-          {/*  <p className="text-center text-primary font-semibold   md:tracking-wide text-sm md:text-lg lg:text-2xl py-2">
-            Hi! I&apos;m Claudia, a React Developer .
-          </p> */}
           <p className="text-lg font-medium text-foreground/90 md:text-xl lg:text-2xl">
             ¡Hola! Soy{" "}
             <span className="font-semibold text-primary">Claudia</span>
@@ -47,7 +44,7 @@ const Hero = () => {
               className="transition-all duration-500 hover:-translate-y-2"
             >
               <MagicButton
-                title="Show my Word"
+                title="Ver proyectos"
                 icon={<ArrowBigDown />}
                 position="right"
               />
