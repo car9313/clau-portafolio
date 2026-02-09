@@ -40,7 +40,7 @@ const Hero = () => {
           </p>
           <div className="flex  justify-center items-center gap-4 py-2">
             <a
-              href="#about"
+              href="#projects"
               className="transition-all duration-500 hover:-translate-y-2"
             >
               <MagicButton

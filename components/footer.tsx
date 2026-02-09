@@ -34,7 +34,7 @@ const Footer = () => {
 
             <a
               href="mailto:claudia@email.com?subject=Collaboration%20or%20Project"
-              className="self-start"
+              className="transition-all duration-500 hover:-translate-y-2"
             >
               <MagicButton
                 title="Send me an email"
