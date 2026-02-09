@@ -55,7 +55,7 @@ export default function Timeline() {
         <div className="relative">
           {/* Vertical line */}
           <motion.div
-            className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary/20"
+            className="absolute left-1/2 transform -translate-x-1/2 w-0.75 h-full bg-primary/20"
             style={{ scaleY: scaleX }}
           />
           <motion.div
